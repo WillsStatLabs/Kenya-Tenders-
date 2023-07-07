@@ -1,7 +1,14 @@
 ---
 title: "Go.Ke Tenders & Contracts"
 author: "Indagwa Terrance"
-format: html
+format:
+  html:
+    code-fold: true
+jupyter: python3
+execute:
+  cache: true
+editor:
+  render-on-save: true
 ---
 
 
@@ -20,7 +27,8 @@ import seaborn as sns
 # Data
 
 ```{python}
-
+#| echo: false
+#| 
 data= pd.read_excel("TENDERS.xlsx", sheet_name="df")
 
 data.head()# checking the first 6 entries
@@ -57,6 +65,7 @@ plt.show()
 
 ## Procurement Methods
 ```{python}
+
 dt=data["Procurement Method"].value_counts()
 
 df_counts=pd.DataFrame({"Category": dt.index, "Counts":dt.values})
